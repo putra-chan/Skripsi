@@ -4,12 +4,12 @@
         <div class="row">
             <div class="col s12">
                 <div class="card-panel teal white-text">
-                    <?php include "koneksi.php";
-                    $ss = mysqli_query($conn,'select * from user where username="'.$_SESSION['user'].'" ');
+                    <?php include "../koneksi.php";
+                    $ss = mysqli_query($connect, 'select * from user where username="' . $_SESSION['user'] . '" ');
                     $ds = mysqli_fetch_array($ss);
                     ?>
                     <h5>Selamat datang,
-                        <i><?=$ds['username'];?>.</i>
+                        <i><?= $ds['username']; ?>.</i>
                     </h5>
                 </div>
             </div>
@@ -40,9 +40,9 @@
                         </div>
                         <div class="col s3">
                             <div class="input-field">
-                                <button class="btn waves-effect blue"><i class="ion-search"></i> Cari</button>  
+                                <button class="btn waves-effect blue"><i class="ion-search"></i> Cari</button>
                             </div>
-                        </div>  
+                        </div>
                     </form>
                     <div class="col s12 note">
                         <b>Nb: </b>
@@ -53,12 +53,12 @@
                             </button>
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
-            
+
         </div>
     </div>
 </div>
 
-<?php include "footer.php";?>
+<?php include "footer.php"; ?>

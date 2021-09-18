@@ -13,4 +13,3 @@ if($query) {
 } else {
     echo "<script>window.alert('Oops!!, Terjadi kesalahan!!!'); window.location.href='signup.php';</script>";
 }
-?>
