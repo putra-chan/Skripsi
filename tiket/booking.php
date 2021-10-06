@@ -1,7 +1,7 @@
 <?php include_once "nav.php"; ?>
 <?php include "../koneksi.php"; ?>
 <div class="container pageBooking">
-    <div class="row">
+    <div class="rowp">
         <div class="col s12">
             <div class="card-panel">
                 <h3>Customer</h3>
@@ -38,10 +38,11 @@
                         <label for="seat">Kode Kursi</label>
                         <span class="red-text" id="seat_error"></span>
                     </div>
-                    <div class="input-field">
+                    <!-- <div class="input-field">
                         <p class="grey-text">Berangkat Tanggal</p>
-                        <input type="date" name="depart" value="<?= $qur['depart']; ?>">
-                    </div>
+                        <input type="date" name="depart" value="<?php //echo $qur['depart']; 
+                                                                ?>">
+                    </div> -->
                     <div class="input-field">
                         <?php
                         $qur['price'];

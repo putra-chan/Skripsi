@@ -35,10 +35,6 @@
                             </div>
                         </div>
                         <div class="col s3">
-                            <label class="grey-text" id="tanggal-keberangkatan">Tanggal Berangkat</label>
-                            <input type="date" name="tglBerangkat" id="tanggal-keberangkatan">
-                        </div>
-                        <div class="col s3">
                             <div class="input-field">
                                 <button class="btn waves-effect blue"><i class="ion-search"></i> Cari</button>
                             </div>

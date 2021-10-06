@@ -30,65 +30,79 @@
                                 <td>ID Customer</td>
                                 <td>ID Rute</td>
                                 <td>Status</td>
+                                <td></td>
                             </tr>
                         </thead>
                         <tbody class="white-text">
                             <?php include "koneksi.php";
                             $sql = mysqli_query($conn, 'select * from reserv ');
-                            while($dtt = mysqli_fetch_array($sql) ) {
+                            while ($dtt = mysqli_fetch_array($sql)) {
                             ?>
-                            <tr>
-                                <td>
-                                    <?=$dtt['reserv_code'];?>
-                                </td>
-                                <td>
-                                    <?=$dtt['reserv_at'];?>
-                                </td>
-                                <td>
-                                    <?=$dtt['reserv_date'];?>
-                                </td>
-                                <td>
-                                    <?=$dtt['seat'];?>
-                                </td>
-                                <td>
-                                    <?=$dtt['depart'];?>
-                                </td>
-                                <td>
-                                    <?=$dtt['price'];?>
-                                </td>
-                                <td>
-                                    <?php
-                                include "koneksi.php";
-                                $squ = mysqli_query($conn, 'select * from user where id_user="'.$dtt['id_user'].'" ');
-                                while($quu = mysqli_fetch_array($squ)) {
-                                ?>
-                                        <b><?=$quu['username'];?></b>
+                                <tr>
+                                    <td>
+                                        <?= $dtt['reserv_code']; ?>
+                                    </td>
+                                    <td>
+                                        <?= $dtt['reserv_at']; ?>
+                                    </td>
+                                    <td>
+                                        <?= $dtt['reserv_date']; ?>
+                                    </td>
+                                    <td>
+                                        <?= $dtt['seat']; ?>
+                                    </td>
+                                    <td>
+                                        <?= $dtt['depart']; ?>
+                                    </td>
+                                    <td>
+                                        <?= $dtt['price']; ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        include "koneksi.php";
+                                        $squ = mysqli_query($conn, 'select * from user where id_user="' . $dtt['id_user'] . '" ');
+                                        while ($quu = mysqli_fetch_array($squ)) {
+                                        ?>
+                                            <b><?= $quu['username']; ?></b>
                                         <?php } ?>
-                                </td>
-                                <td>
-                                    <?=$dtt['id_customer'];?>
-                                </td>
-                                <td>
-                                    <?=$dtt['id_rute'];?>
-                                </td>
-                                <td>
-                                    <?php 
-                                    if($dtt['status']=='Proses') {
-                                    ?>
-                                    <a href="terima.php?id_reserv=<?=$dtt['id_reserv'];?>" onclick="return confirm('Ingin Melanjutkan?');" class="white-text">
-                                        <button class="btn waves-effect green"><?=$dtt['status'];?></button>
-                                    </a>
-                                    <?php 
-                                    } else {
-                                        echo $dtt['status'];
-                                    }
-                                    ?>
+                                    </td>
+                                    <td>
+                                        <?= $dtt['id_customer']; ?>
+                                    </td>
+                                    <td>
+                                        <?= $dtt['id_rute']; ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        if ($dtt['status'] == 'Proses') {
+                                        ?>
+                                            <a href="terima.php?id_reserv=<?= $dtt['id_reserv']; ?>" onclick="return confirm('Ingin Melanjutkan?');" class="white-text">
+                                                <button class="btn waves-effect green"><?= $dtt['status']; ?></button>
+                                            </a>
+                                        <?php
+                                        } else {
+                                            echo $dtt['status'];
+                                        }
+                                        ?>
 
-                                </td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        if ($dtt['status'] == 'Proses') {
+                                        ?>
+                                            <a href="/files/bukti_pembayaran/<?= $dtt['proof_payment'] ?>" class="white-text" target="_blank">
+                                                <button class="btn waves-effect green">Lihat Bukti Pembayaran</button>
+                                            </a>
+                                        <?php
+                                        } else {
+                                        }
+                                        ?>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
                             <?php } ?>
                         </tbody>
                     </table>
@@ -97,7 +111,7 @@
         </div>
         <a href="index.php" onclick="window.close();"><button class="btn waves-effect red"><i class="ion-close"></i></button></a>
     </div>
-    <?php include "footer.php";?>
+    <?php include "footer.php"; ?>
 </body>
 
 </html>
