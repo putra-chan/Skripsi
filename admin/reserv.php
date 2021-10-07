@@ -100,6 +100,20 @@
 
                                     </td>
                                     <td>
+                                        <?php
+                                        if ($dtt['status'] == 'Proses') {
+                                        ?>
+                                            <a href="/tiket/batal-pesanan.php?id=<?= $query['id_reserv']; ?>">
+                                                <button class="btn waves-effect red">
+                                                    <i class="ion-android-cancel"></i> Batal Booking
+                                                </button>
+                                            </a>
+                                        <?php
+                                        } else {
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
 
                                     </td>
                                 </tr>
