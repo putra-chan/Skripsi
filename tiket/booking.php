@@ -95,13 +95,15 @@
                 rute: $('#ir').val(),
                 seat: $(this).val()
             },
-            success: function(result) {
+            success: function(data) {
                 // var data = JSON.parse(result);
-                if (result) {
-                    $('#seat_error').html("Maaf, Seat Nomor " + $('#seat').val() + " Sudah Terisi. Silahkan Pilih Seat Lain");
-                    // $('#seat').val("");
-                } else {
-                    // $('#seat_error').html("");
+                console.log(data);
+                if (data.status) {
+                    if (data.limit) {
+                        $('#seat_error').html("Maaf, Kursi Sudah Tidak Tersedia Lagi !");
+                    } else if (data.filled) {
+                        $('#seat_error').html("Maaf, Seat Nomor " + $('#seat').val() + " Sudah Terisi. Silahkan Pilih Seat Lain");
+                    }
                 }
             },
             error: function() {

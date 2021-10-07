@@ -36,8 +36,9 @@
                         </div>
                         <div class="col s3">
                             <div class="input-field">
-                                <button class="btn waves-effect blue"><i class="ion-search"></i> Cari</button>
+                                <button id="submit-cari" class="btn waves-effect blue" disabled><i class="ion-search"></i> Cari</button>
                             </div>
+                            <span id="error-cari" class="red-text"></span>
                         </div>
                     </form>
                     <div class="col s12 note">
@@ -56,5 +57,23 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('#submit-cari').on('click', function() {
+        if ($(this).attr('disabled')) {
+            $('#error-cari').html("Lengkapi Isi Pencarian Terlebih Dahulu !");
+        } else {
+            $('#error-cari').html("");
+        }
+    })
+
+    $('#nama-tempat-awal, #nama-tempat').on('keyup', function() {
+        if ($('#nama-tempat-awal').val().length >= 1 && $('#nama-tempat').val().length >= 1) {
+            $('#submit-cari').attr('disabled', false);
+        } else {
+            $('#submit-cari').attr('disabled', true);
+        }
+    })
+</script>
 
 <?php include "footer.php"; ?>
