@@ -105,7 +105,7 @@
                                         if ($dtt['status'] == 'Proses') {
                                         ?>
                                             <!-- change* -->
-                                            <a href="/tiket/tiket/batal-pesanan.php?id=<?= $dtt['id_reserv']; ?>">
+                                            <a href="batal-pesanan.php?id=<?= $dtt['id_reserv']; ?>">
                                                 <button class="btn waves-effect red">
                                                     <i class="ion-android-cancel"></i> Batal Booking
                                                 </button>
