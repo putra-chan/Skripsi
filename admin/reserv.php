@@ -90,7 +90,8 @@
                                         <?php
                                         if ($dtt['status'] == 'Proses') {
                                         ?>
-                                            <a href="/files/bukti_pembayaran/<?= $dtt['proof_payment'] ?>" class="white-text" target="_blank">
+                                            <!-- change* -->
+                                            <a href="/tiket/files/bukti_pembayaran/<?= $dtt['proof_payment'] ?>" class="white-text" target="_blank">
                                                 <button class="btn waves-effect green">Lihat Bukti Pembayaran</button>
                                             </a>
                                         <?php
@@ -103,7 +104,8 @@
                                         <?php
                                         if ($dtt['status'] == 'Proses') {
                                         ?>
-                                            <a href="/tiket/batal-pesanan.php?id=<?= $dtt['id_reserv']; ?>">
+                                            <!-- change* -->
+                                            <a href="/tiket/tiket/batal-pesanan.php?id=<?= $dtt['id_reserv']; ?>">
                                                 <button class="btn waves-effect red">
                                                     <i class="ion-android-cancel"></i> Batal Booking
                                                 </button>

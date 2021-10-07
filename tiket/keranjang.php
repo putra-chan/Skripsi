@@ -151,7 +151,8 @@ $id_user = $q['id_user'];
                 },
 
                 type: 'POST',
-                url: '/upload.php',
+                // change*
+                url: '/tiket/upload.php',
                 data: formData,
                 processData: false,
                 contentType: false,
